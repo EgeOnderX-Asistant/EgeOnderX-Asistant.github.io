@@ -1,2 +1,2 @@
-# EgeOnderX-Asistant.github.io
+# EgeOnderX.github.io
 Configs. Projects. Mumbo-jumbos.

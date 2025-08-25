@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ege Önder - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Top Navigation -->
+<nav>
+    <a href="contact.html">Contact</a>
+    <a href="https://github.com/EgeOnderX" target="_blank">GitHub</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+</nav>
+
+<!-- Header & Profile -->
+<header>
+    <img src="https://github.com/user-attachments/assets/6a82a9bd-04b0-4ed8-bf4c-cac5479cf905" alt="Ege Önder">
+    <div class="intro">
+        <h1>👋 Hi, I’m Ege Önder (@EgeOnderX)</h1>
+        <p>A curious mind exploring everything from low-level computing to artificial intelligence. Always building, breaking, blowing things up and learning.</p>
+    </div>
+</header>
+
+<main>
+    <!-- General Section -->
+    <section id="general" class="section-card">
+        <h2>📌 General</h2>
+        <pre id="generalContent">Loading...</pre>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="section-card">
+        <h2>📰 News</h2>
+        <pre id="newsContent">Loading...</pre>
+    </section>
+</main>
+
+<script>
+    // Load general.txt content
+    fetch('general.txt')
+        .then(response => {
+            if (!response.ok) throw new Error("Failed to load general.txt!");
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('generalContent').textContent = data;
+        })
+        .catch(err => {
+            document.getElementById('generalContent').textContent = "❌ Failed to load General.";
+            console.error(err);
+        });
+
+    // Load news.txt content
+    fetch('news.txt')
+        .then(response => {
+            if (!response.ok) throw new Error("Failed to load news.txt!");
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('newsContent').textContent = data;
+        })
+        .catch(err => {
+            document.getElementById('newsContent').textContent = "❌ Failed to load News.";
+            console.error(err);
+        });
+</script>
+
+</body>
+</html>
